@@ -1,0 +1,24 @@
+name: "Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Release type (patch, minor, major)"
+        required: true
+        default: "minor"
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run release-it
+        run: npx release-it ${{ inputs.release_type }} --ci
