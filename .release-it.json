@@ -5,5 +5,14 @@
   },
   "github": {
     "release": true
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "in": "package.json",
+      "out": {
+        "file": "app.json",
+        "path": "expo.version"
+      }
+    }
   }
 }
