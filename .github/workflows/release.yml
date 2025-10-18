@@ -42,5 +42,3 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Run release-it
         run: pnpm run release ${{ inputs.release_type }} --ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
