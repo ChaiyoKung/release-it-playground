@@ -33,5 +33,9 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@chaiyokung.com"
       - name: Run release-it
         run: pnpm run release ${{ inputs.release_type }} --ci
