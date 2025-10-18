@@ -13,6 +13,9 @@ on:
           - "major"
         default: "minor"
 
+permissions:
+  contents: write
+
 env:
   NODE_VERSION: "22"
   PNPM_VERSION: "10"
