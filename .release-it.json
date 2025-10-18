@@ -4,9 +4,6 @@
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}"
   },
-  "github": {
-    "release": true
-  },
   "plugins": {
     "@release-it/bumper": {
       "in": "package.json",
